@@ -2,6 +2,7 @@ package com.example.register.api
 
 import com.example.register.model.EmployeeRequest
 import com.example.register.model.EmployeeResponse
+import com.example.register.model.EmployeeUpdateRequest
 import com.example.register.model.MessageResponse
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
@@ -34,5 +35,14 @@ interface EmployeeApi {
     @GetMapping
     fun getEmployee(@Valid @RequestParam("documentNumber")
                     @NotBlank(message = "The document number must be informed") documentNumber: String): EmployeeResponse
+
+    @ApiOperation(value = "Update an Employee", notes = "Update an Employee")
+    @ApiResponses(value = [ApiResponse(code = 202, message = "Updated", response = MessageResponse::class),
+        ApiResponse(code = 400, message = "Bad request", response = MessageResponse::class),
+        ApiResponse(code = 404, message = "Employee not found", response = MessageResponse::class),
+        ApiResponse(code = 500, message = "Internal error to update the employee", response = MessageResponse::class)])
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    @PutMapping
+    fun updateEmployee(@Valid @RequestBody employeeUpdateRequest: EmployeeUpdateRequest): MessageResponse
 
 }

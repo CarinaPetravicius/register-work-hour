@@ -27,4 +27,14 @@ data class EmployeeDomain(
             throw EmployeeBadRequestException("Invalid date of birth")
         }
     }
+
+    fun newEmployeeToBeUpdated(employeeDomainNew: EmployeeDomain): EmployeeDomain {
+        return EmployeeDomain(id, documentNumber, employeeDomainNew.name, employeeDomainNew.dateOfBirth, employeeDomainNew.rule,
+                employeeDomainNew.jobDescription, employeeDomainNew.admissionDate, employeeDomainNew.resignationDate,
+                employeeDomainNew.isActiveIfHasNotResignationDate(), createdDate, employeeDomainNew.updatedDate)
+    }
+
+    private fun isActiveIfHasNotResignationDate(): Boolean {
+        return resignationDate == null
+    }
 }
