@@ -8,8 +8,8 @@ import java.util.*
 @Repository
 interface EmployeeRepository : JpaRepository<EmployeeDB, String> {
 
-    fun existsByDocumentNumber(documentNumber: Long) : Boolean
+    fun existsByDocumentNumber(documentNumber: String) : Boolean
 
-    fun findByDocumentNumberAndActive(documentNumber: Long, active: Boolean) : Optional<EmployeeDB>
+    fun findByDocumentNumberAndActive(documentNumber: String, active: Boolean) : Optional<EmployeeDB>
 
 }

@@ -8,7 +8,7 @@ import java.time.LocalDateTime
 
 data class EmployeeDomain(
         val id: Long? = null,
-        val documentNumber: Long,
+        val documentNumber: String,
         val name: String,
         val dateOfBirth: LocalDate,
         val rule: String,

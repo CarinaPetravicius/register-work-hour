@@ -4,6 +4,6 @@ import com.example.register.domain.EmployeeDomain
 
 interface GetActiveEmployeeGateway {
 
-    fun execute(documentNumber: Long) : EmployeeDomain
+    fun execute(documentNumber: String) : EmployeeDomain
 
 }

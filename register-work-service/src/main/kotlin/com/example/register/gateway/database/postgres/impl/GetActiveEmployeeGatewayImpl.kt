@@ -18,7 +18,7 @@ class GetActiveEmployeeGatewayImpl(private val employeeRepository: EmployeeRepos
 
     private val log: Logger = LoggerFactory.getLogger(GetActiveEmployeeGatewayImpl::class.java)
 
-    override fun execute(documentNumber: Long): EmployeeDomain {
+    override fun execute(documentNumber: String): EmployeeDomain {
         val employeeDB: Optional<EmployeeDB>
 
         try {

@@ -13,7 +13,7 @@ class HasEmployeeCreatedGatewayImpl(private val employeeRepository: EmployeeRepo
 
     private val log: Logger = LoggerFactory.getLogger(HasEmployeeCreatedGatewayImpl::class.java)
 
-    override fun execute(documentNumber: Long): Boolean {
+    override fun execute(documentNumber: String): Boolean {
         try {
             return employeeRepository.existsByDocumentNumber(documentNumber)
         } catch (ex: Exception) {

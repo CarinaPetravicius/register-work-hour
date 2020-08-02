@@ -8,7 +8,7 @@ import java.time.LocalDate
 
 data class EmployeeResponse(
         @ApiModelProperty(required = true)
-        val documentNumber: Long,
+        val documentNumber: String,
 
         @ApiModelProperty(required = true)
         val name: String,

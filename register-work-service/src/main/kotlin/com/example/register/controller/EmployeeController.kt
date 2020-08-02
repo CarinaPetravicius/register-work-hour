@@ -33,7 +33,7 @@ class EmployeeController(private val createEmployeeUseCase: CreateEmployeeUseCas
         return MessageResponse(EmployeeHttpResponse.EMPLOYEE_CREATED.httpStatus, EmployeeHttpResponse.EMPLOYEE_CREATED.httpMessage)
     }
 
-    override fun getEmployee(documentNumber: Long): EmployeeResponse {
+    override fun getEmployee(documentNumber: String): EmployeeResponse {
         log.info("Employee API starting to get the employee")
 
         val employeeDomain: EmployeeDomain = getEmployeeUseCase.execute(documentNumber)

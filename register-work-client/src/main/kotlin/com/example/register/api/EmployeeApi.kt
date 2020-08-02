@@ -10,7 +10,7 @@ import io.swagger.annotations.ApiResponses
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
-import javax.validation.constraints.NotNull
+import javax.validation.constraints.NotBlank
 
 @RequestMapping("/v1/employee")
 @Api(tags = ["Employee"])
@@ -33,6 +33,6 @@ interface EmployeeApi {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     fun getEmployee(@Valid @RequestParam("documentNumber")
-                    @NotNull(message = "The document number must be informed") documentNumber: Long): EmployeeResponse
+                    @NotBlank(message = "The document number must be informed") documentNumber: String): EmployeeResponse
 
 }

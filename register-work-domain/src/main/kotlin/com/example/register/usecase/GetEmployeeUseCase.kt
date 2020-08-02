@@ -7,7 +7,7 @@ import javax.inject.Named
 @Named
 class GetEmployeeUseCase(private val getActiveEmployeeGateway: GetActiveEmployeeGateway) {
 
-    fun execute(documentNumber: Long): EmployeeDomain {
+    fun execute(documentNumber: String): EmployeeDomain {
         return getActiveEmployeeGateway.execute(documentNumber)
     }
 

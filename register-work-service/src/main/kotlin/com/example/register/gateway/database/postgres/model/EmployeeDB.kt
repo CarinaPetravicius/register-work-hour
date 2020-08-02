@@ -12,7 +12,7 @@ class EmployeeDB(
         val id: Long? = null,
 
         @Column(nullable = false)
-        val documentNumber: Long,
+        val documentNumber: String,
 
         @Column(nullable = false)
         val name: String,
